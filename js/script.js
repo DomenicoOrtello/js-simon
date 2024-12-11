@@ -45,17 +45,17 @@ setTimeout(() => {
 }, 5000);
 
 // Timer da 5 secondi in giù
-let countdown = 4; //per rimuovere l'input container sono costretto ad abbassare il countdown da 5 a 4
+let countdown = 5; //per rimuovere l'input container sono costretto ad abbassare il countdown da 5 a 4
 const timerElement = document.getElementById("timer");
 const inputContainerElm = document.getElementById("input-container");
 // Funzione per aggiornare il timer ogni secondo
 const timerInterval = setInterval(() => {
-  timerElement.innerText = `${countdown}`;
-  countdown--;
-// Quando il countdown arriva a 0, ferma il timer e mostra il modulo
-  if (countdown < 0) {
+    if (countdown > 0) {
+    timerElement.innerText = `${countdown}`;
+    countdown--;
+  } else {
+// Quando il timer raggiunge lo 0 mostrare l'input container
     clearInterval(timerInterval);
-    // Mostra il modulo e nasconde il timer
     inputContainer.classList.remove("d-none");
   }
 }, 1000);
