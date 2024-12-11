@@ -12,6 +12,12 @@ const guessForm = document.getElementById("guess-form");
 const inputs = document.querySelectorAll(".number-input");
 const randomNumbersElement = document.getElementById("random-numbers");
 
+// Timer di 30 secondi
+setTimeout(() => {
+    numbersContainer.style.display = "none";
+    inputContainer.style.display = "block";
+  }, 5000);  
+
 // Genera i numeri casuali
 function generateRandomNumbers(count, min, max) {
     const numbers = [];
@@ -23,9 +29,8 @@ function generateRandomNumbers(count, min, max) {
     }
     return numbers;
   }
-
-// Timer di 30 secondi
-setTimeout(() => {
-    numbersContainer.style.display = "none";
-    inputContainer.style.display = "block";
-  }, 5000);
+// Genera due array casuali
+const randomNumbers = generateRandomNumbers(5, 1, 100);
+const targetNumbers = generateRandomNumbers(5, 1, 100);
+console.log("Numeri da indovinare (target):", targetNumbers);
+randomNumbersElement.textContent = randomNumbers.join(", ");
