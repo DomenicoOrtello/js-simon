@@ -32,7 +32,7 @@ console.log("Numeri da indovinare:", randomNumbers);
 let numbersText = "";
 for (let i = 0; i < randomNumbers.length; i++) {
   if (i > 0) {
-    numbersText += ", "; // Aggiungi una virgola e uno spazio tra i numeri
+    numbersText += ", ";
   }
   numbersText += randomNumbers[i];
 }
@@ -45,7 +45,7 @@ setTimeout(() => {
 }, 5000);
 
 // Timer da 5 secondi in giù
-let countdown = 5;
+let countdown = 4; //per rimuovere l'input container sono costretto ad abbassare il countdown da 5 a 4
 const timerElement = document.getElementById("timer");
 const inputContainerElm = document.getElementById("input-container");
 // Funzione per aggiornare il timer ogni secondo
